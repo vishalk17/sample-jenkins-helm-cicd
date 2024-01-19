@@ -38,7 +38,7 @@ pipeline {
             steps {
                 script {
                     for (srcDir in env.HELM_SRC_DIRECTORIES.split()) {
-                        sh "cd $srcDir && helm package ."
+                        sh "cd $srcDir && microk8s helm3 package ."
                         sh "tree"
                     }
                 }
